@@ -85,18 +85,6 @@ $query = $coneccion -> query($buscar);
   }
 else
 {
-  if(mysqli_num_rows($query) > 0)
-  {
-  while($row = $query->fetch_assoc()){
-
-  $id_producto = $row['id_producto'];
-  $nombre_producto = $row['nombre'];
-  $precio = $row['precio'];
-  $fecha = $row['fecha'];
-  
-
-
-
  ?>
   <div class="row">
     <div class="col-md-12"></div>
@@ -110,12 +98,22 @@ else
       <th scope="col">Fecha de ingreso</th>
     </tr>
   </thead>
+  <?php 
+if(mysqli_num_rows($query) > 0)
+  {
+  while($row = $query->fetch_assoc()){
+
+  $id_producto = $row['id_producto'];
+  $nombre_producto = $row['nombre'];
+  $precio = $row['precio'];
+  $fecha = $row['fecha'];
+   ?>
   <tbody>
     <tr>
       <th scope="row"><?php echo $id_producto; ?></th>
       <td><?php echo $nombre_producto; ?></td>
       <td><?php echo $precio; ?></td>
-      <td><?php echo $fecha; ?></td>
+      <td><?php echo $fecha;  }}}?></td>
     </tr>
     
   </tbody>
@@ -125,9 +123,7 @@ else
     <div class="col-md-4"></div>
   </div>
 
-  <?php 
-}}}
-   ?>
+  
 </div>
 
 

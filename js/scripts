@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+    function cambiarDiv(){
+
+        var contenido = document.getElementById('a').innerHTML;
+        if (contenido == "Hola") {
+            document.getElementById('a').innerHTML = "Tabio";
+            alert("tabio");
+        }else{
+            document.getElementById('a').innerHTML = "Hola";
+        }
+
+    }
+
+</script>
